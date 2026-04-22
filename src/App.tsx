@@ -306,13 +306,23 @@ function About() {
           <div className="grid sm:grid-cols-2 gap-16 max-w-2xl mx-auto">
             <motion.div custom={0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="flex flex-col items-center">
               <img src="/josh.jpg" alt="Josh Cons" className="w-32 h-32 rounded-full object-cover mb-6 shadow-sm border border-brand-100" />
-              <h4 className="text-2xl font-semibold text-brand-950 tracking-tight">Josh Cons</h4>
+              <h4 className="text-2xl font-semibold text-brand-950 tracking-tight hover:text-brand-600 transition-colors">
+                <a href="https://www.linkedin.com/in/josh-cons-453993204" target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                  Josh Cons
+                  <Linkedin className="w-5 h-5 text-[#0A66C2]" />
+                </a>
+              </h4>
               <p className="text-brand-600 mt-2 font-medium tracking-wide uppercase text-xs">Founder</p>
             </motion.div>
 
             <motion.div custom={0.2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="flex flex-col items-center">
               <img src="/yathin.jpg" alt="Yathin N." className="w-32 h-32 rounded-full object-cover mb-6 shadow-sm border border-brand-100" />
-              <h4 className="text-2xl font-semibold text-brand-950 tracking-tight">Yathin N.</h4>
+              <h4 className="text-2xl font-semibold text-brand-950 tracking-tight hover:text-brand-600 transition-colors">
+                <a href="https://www.linkedin.com/in/yathin-narvaneni" target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                  Yathin N.
+                  <Linkedin className="w-5 h-5 text-[#0A66C2]" />
+                </a>
+              </h4>
               <p className="text-brand-600 mt-2 font-medium tracking-wide uppercase text-xs">Founders Office</p>
             </motion.div>
           </div>
