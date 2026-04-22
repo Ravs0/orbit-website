@@ -41,8 +41,8 @@ function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-2xl border-b border-gray-100/50">
       <div className="flex items-center justify-between px-5 sm:px-8 py-5 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2 font-bold text-xl text-brand-950 tracking-tight">
-          <img src="/logo.png" alt="Orbit Logo" className="w-8 h-8 rounded-full" />
+        <div className="flex items-center gap-3 font-bold text-2xl text-brand-950 tracking-tight">
+          <img src="/logo.png" alt="Orbit Logo" className="h-10 w-auto object-contain" />
           Orbit
         </div>
         <div className="flex items-center gap-8 text-[15px] font-medium tracking-tight">
@@ -296,12 +296,12 @@ function About() {
       {/* Team Section Extracted to Distinct Color Block */}
       <section className="py-24 sm:py-32 px-4 sm:px-6 md:px-8 bg-brand-50 text-brand-950 relative overflow-hidden border-t border-brand-100">
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <motion.h3 
+          <motion.h2 
             custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
-            className="text-brand-600 text-[11px] font-bold tracking-[0.2em] uppercase mb-16"
+            className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-brand-950 leading-[1.05] mb-16"
           >
             The Orbit Team
-          </motion.h3>
+          </motion.h2>
           
           <div className="grid sm:grid-cols-2 gap-16 max-w-2xl mx-auto">
             <motion.div custom={0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="flex flex-col items-center">
