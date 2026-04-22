@@ -217,7 +217,7 @@ function Pricing() {
           <div className="text-brand-400 font-bold text-[13px] sm:text-[15px] tracking-[0.25em] uppercase mb-8">
             Feature on Orbit
           </div>
-          <h2 className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-white mb-8 leading-[1]">
+          <h2 className="text-[2.5rem] md:text-[4rem] lg:text-[4.5rem] font-serif tracking-tight text-white mb-8 leading-[1]">
             Reach 30,000+ Writers and Designers
           </h2>
           <p className="text-xl md:text-[1.35rem] text-brand-200/80 font-normal leading-relaxed max-w-2xl">
@@ -280,10 +280,10 @@ function About() {
           <motion.div 
             custom={0.2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
           >
-            <h2 className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-white leading-[1.05] mb-8">
+            <p className="text-2xl sm:text-[2rem] font-medium tracking-tight text-white leading-[1.4] mb-8">
               Finding good creative work shouldn't mean scrolling through a thousand low-quality listings.
-            </h2>
-            <p className="text-xl md:text-[1.35rem] text-brand-200/80 leading-[1.6] mb-12 max-w-3xl mx-auto">
+            </p>
+            <p className="text-lg sm:text-xl text-brand-200/80 leading-[1.8] mb-12 max-w-3xl mx-auto font-light">
               Every week, we hand-pick writing and design roles worth actually applying to, and send them straight to your inbox. Just roles that pay well, from teams worth working with.
             </p>
             <a href="#subscribe" className="inline-block px-10 py-4 bg-white text-brand-950 rounded-[0.8rem] font-medium text-[16px] hover:bg-brand-50 transition-colors shadow-lg hover:scale-[1.02]">
@@ -298,7 +298,7 @@ function About() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.h2 
             custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
-            className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-brand-950 leading-[1.05] mb-16"
+            className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-bold tracking-tight text-brand-950 leading-[1.1] mb-16"
           >
             The Orbit Team
           </motion.h2>
