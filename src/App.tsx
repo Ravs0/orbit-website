@@ -35,31 +35,21 @@ function SleekBackgroundWaves() {
   );
 }
 
-function getDetailedNextFriday() {
-  const today = new Date();
-  const dayOfWeek = today.getDay();
-  let daysUntilFriday = 5 - dayOfWeek;
-  if (daysUntilFriday <= 0) daysUntilFriday += 7;
-  
-  const nextFriday = new Date(today);
-  nextFriday.setDate(today.getDate() + daysUntilFriday);
-  const month = nextFriday.toLocaleDateString('en-US', { month: 'long' });
-  const day = nextFriday.getDate();
-  return `Friday, ${month} ${day}`;
-}
+
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 z-50 w-full bg-brand-950/80 backdrop-blur-2xl border-b border-brand-800/50">
+    <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-2xl border-b border-gray-100/50">
       <div className="flex items-center justify-between px-5 sm:px-8 py-5 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2 font-bold text-xl text-white tracking-tight">
+        <div className="flex items-center gap-2 font-bold text-xl text-brand-950 tracking-tight">
+          <img src="/logo.png" alt="Orbit Logo" className="w-8 h-8 rounded-full" />
           Orbit
         </div>
         <div className="flex items-center gap-8 text-[15px] font-medium tracking-tight">
-          <a href="#pricing" className="text-brand-300 hover:text-white transition-colors hidden sm:block">
+          <a href="#pricing" className="text-gray-500 hover:text-brand-950 transition-colors hidden sm:block">
             Pricing
           </a>
-          <a href="#subscribe" className="text-brand-300 hover:text-white transition-colors hidden sm:block">
+          <a href="#subscribe" className="text-gray-500 hover:text-brand-950 transition-colors hidden sm:block">
             Subscribe
           </a>
           <motion.a 
@@ -68,7 +58,7 @@ function Navbar() {
             href="https://forms.gle/JwTDhPd1S6RhDQjRA" 
             target="_blank" 
             rel="noreferrer" 
-            className="px-6 py-2.5 bg-white text-brand-950 font-medium rounded-[0.4rem] shadow-sm hover:bg-brand-50 transition-all"
+            className="px-6 py-2.5 bg-brand-950 text-white font-medium rounded-[0.4rem] shadow-sm hover:bg-brand-900 transition-all"
           >
             Post a Job
           </motion.a>
@@ -88,23 +78,23 @@ function Hero() {
   };
 
   return (
-    <section className="relative px-6 pt-32 pb-28 md:pt-48 md:pb-40 overflow-hidden flex flex-col justify-center min-h-[90vh] bg-brand-950" id="subscribe">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.4)_0%,transparent_50%)] pointer-events-none opacity-60" />
+    <section className="relative px-6 pt-32 pb-28 md:pt-48 md:pb-40 overflow-hidden flex flex-col justify-center min-h-[90vh] bg-white" id="subscribe">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05)_0%,transparent_50%)] pointer-events-none opacity-100" />
       <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-start text-left">
         
         {/* Eyebrow matching screenshot style */}
-        <motion.div custom={0.05} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-brand-400 text-[11px] font-bold tracking-[0.25em] uppercase mb-10">
+        <motion.div custom={0.05} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-brand-600 text-[11px] font-bold tracking-[0.25em] uppercase mb-10">
           The curated job board for creatives
         </motion.div>
 
         {/* Huge Heading */}
-        <motion.h1 custom={0.1} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-light text-white leading-[1.05] tracking-tight mb-8 max-w-5xl">
+        <motion.h1 custom={0.1} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold text-brand-950 leading-[1.05] tracking-tight mb-8 max-w-5xl">
           Where writers and designers <br className="hidden lg:block" />
-          <span className="font-serif italic font-medium text-brand-300">land their next role.</span>
+          <span className="font-serif italic font-bold text-brand-600">land their next role.</span>
         </motion.h1>
         
         {/* Subtext */}
-        <motion.p custom={0.2} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-xl md:text-[1.35rem] text-brand-200/80 mb-12 max-w-2xl leading-[1.6]">
+        <motion.p custom={0.2} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-xl md:text-[1.35rem] text-gray-600 mb-12 max-w-2xl leading-[1.6]">
           hand-picked roles delivered weekly to 30,000+ subscribers
         </motion.p>
         
@@ -125,7 +115,7 @@ function Hero() {
                 </button>
                 <button 
                   onClick={() => setRole('designer')} 
-                  className="w-full sm:w-auto px-8 py-4 bg-transparent border border-brand-500 text-brand-100 rounded-[0.4rem] font-medium text-[16px] hover:bg-brand-900 hover:text-white transition-all hover:scale-[1.02]"
+                  className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-300 text-brand-950 rounded-[0.4rem] font-medium text-[16px] hover:bg-gray-50 transition-all hover:scale-[1.02] shadow-sm"
                 >
                   I'm a designer &rarr;
                 </button>
@@ -145,7 +135,7 @@ function Hero() {
                   type="email" 
                   placeholder={`Email for ${role} roles...`}
                   required
-                  className="w-full sm:flex-1 px-6 py-4 bg-brand-900/50 border border-brand-800 rounded-[0.4rem] outline-none text-white placeholder:text-brand-400 font-medium text-[16px] focus:border-brand-500 transition-colors shadow-sm"
+                  className="w-full sm:flex-1 px-6 py-4 bg-white border border-gray-300 rounded-[0.4rem] outline-none text-brand-950 placeholder:text-gray-400 font-medium text-[16px] focus:border-brand-500 transition-colors shadow-sm"
                   autoFocus
                 />
                 <button 
@@ -162,9 +152,9 @@ function Hero() {
                 key="success"
                 initial={{ opacity: 0, scale: 0.98 }} 
                 animate={{ opacity: 1, scale: 1 }}
-                className="w-full px-6 py-4 border border-brand-800 bg-brand-900/50 text-white rounded-[0.4rem] font-medium text-[16px] flex items-center justify-start gap-3"
+                className="w-full px-6 py-4 border border-green-200 bg-green-50 text-green-800 rounded-[0.4rem] font-medium text-[16px] flex items-center justify-start gap-3"
               >
-                <div className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 Check your inbox. You're on the list.
               </motion.div>
             )}
@@ -176,22 +166,12 @@ function Hero() {
   );
 }
 
-function PricingCard({ pretitle, title, pricePrefix, price, priceSuffix, features, cta, link, isPrimary, delay }: any) {
+function PricingCard({ pretitle, title, pricePrefix, price, priceSuffix, features, cta, link, delay }: any) {
   return (
     <motion.div 
       custom={delay} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariants}
-      className={`relative p-8 sm:p-10 flex flex-col h-full rounded-[2.5rem] transition-all duration-300 ${
-        isPrimary 
-        ? 'bg-white border-2 border-brand-950 shadow-[0_8px_30px_rgb(0,0,0,0.12)] md:scale-105 z-10' 
-        : 'bg-white border border-gray-200 shadow-sm'
-      }`}
+      className={`relative p-8 sm:p-10 flex flex-col h-full rounded-[2.5rem] transition-all duration-300 bg-white border border-gray-200 shadow-xl`}
     >
-      {isPrimary && (
-        <div className="absolute top-0 right-10 -translate-y-[45%] bg-brand-950 text-white text-[11px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-sm">
-          Most Popular
-        </div>
-      )}
-      
       <div className="text-brand-500 font-bold text-xs tracking-widest uppercase mb-4 font-sans">{pretitle}</div>
       <h3 className="text-[2rem] font-serif text-brand-950 font-bold mb-6 tracking-tight leading-tight">{title}</h3>
       
@@ -208,11 +188,7 @@ function PricingCard({ pretitle, title, pricePrefix, price, priceSuffix, feature
         {priceSuffix && <span className="text-[17px] font-medium text-gray-500 ml-2">{priceSuffix}</span>}
       </div>
 
-      <a href={link} className={`block w-full text-center py-4 rounded-[0.8rem] font-semibold text-[17px] transition-all mt-8 mb-8 ${
-        isPrimary 
-        ? 'bg-brand-950 text-white hover:bg-brand-900 shadow-md' 
-        : 'bg-brand-50 text-brand-950 hover:bg-brand-100 border border-brand-200/50'
-      }`}>
+      <a href={link} className={`block w-full text-center py-4 rounded-[0.8rem] font-semibold text-[17px] transition-all mt-8 mb-8 bg-brand-950 text-white hover:bg-brand-900 shadow-md`}>
         {cta}
       </a>
 
@@ -231,36 +207,31 @@ function PricingCard({ pretitle, title, pricePrefix, price, priceSuffix, feature
 }
 
 function Pricing() {
-  const nextFriday = getDetailedNextFriday();
   return (
-    <div id="pricing">
-      {/* Feature Part Header visually matched to screenshot */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 md:px-8 bg-[#3B349E] border-none overflow-hidden">
+    <div id="pricing" className="bg-brand-950 py-24 sm:py-32">
+      {/* Feature Part Header */}
+      <section className="px-4 sm:px-6 md:px-8 border-none overflow-hidden mb-16">
         <motion.div 
           custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariants}
           className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          <div className="text-[#AFAEE1] font-bold text-[13px] sm:text-[15px] tracking-[0.25em] uppercase mb-8">
+          <div className="text-brand-400 font-bold text-[13px] sm:text-[15px] tracking-[0.25em] uppercase mb-8">
             Feature on Orbit
           </div>
-          <h2 className="text-[2.5rem] md:text-[4rem] lg:text-[4.5rem] font-serif tracking-tight text-white mb-8 leading-[1]">
+          <h2 className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-white mb-8 leading-[1]">
             Reach 30,000+ Writers and Designers
           </h2>
-          <p className="text-xl md:text-[1.35rem] text-white font-normal leading-relaxed max-w-2xl">
+          <p className="text-xl md:text-[1.35rem] text-brand-200/80 font-normal leading-relaxed max-w-2xl">
             Feature your roles or sponsor a placement in our weekly newsletter
           </p>
         </motion.div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="pb-24 sm:pb-32 pt-16 px-4 sm:px-6 md:px-8 bg-[#FAFAFA]">
+      <section className="px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch relative">
-             {/* Connecting Line hidden on mobile */}
-             <div className="hidden md:block absolute top-[40%] left-0 right-0 h-px bg-gray-200 -z-10" />
-
              <PricingCard 
                delay={0.1}
-               isPrimary={false}
                pretitle="For Publishers"
                title="Post a Job"
                price="$249"
@@ -274,7 +245,6 @@ function Pricing() {
              />
              <PricingCard 
                delay={0.2}
-               isPrimary={true}
                pretitle="For Brands"
                title="Sponsor an Edition"
                pricePrefix="from"
@@ -288,12 +258,6 @@ function Pricing() {
                cta="Request a Slot"
              />
           </div>
-
-          <div className="mt-16 sm:mt-24 text-center">
-            <p className="text-brand-950 text-[15px] font-semibold tracking-wide">
-              Next edition: {nextFriday} at 10 AM EST &middot; Request by Thursday Evening
-            </p>
-          </div>
         </div>
       </section>
     </div>
@@ -305,7 +269,7 @@ function About() {
     <>
       {/* About Section */}
       <section className="py-24 sm:py-32 px-4 sm:px-6 md:px-8 bg-brand-950 text-white relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
+        <div className="max-w-5xl mx-auto relative z-10 text-center">
           <motion.h2 
             custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
             className="text-brand-400 text-[11px] font-bold tracking-[0.2em] uppercase mb-6"
@@ -316,10 +280,10 @@ function About() {
           <motion.div 
             custom={0.2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
           >
-            <p className="text-2xl sm:text-[2rem] font-medium tracking-tight text-white leading-[1.4] mb-8">
+            <h2 className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-white leading-[1.05] mb-8">
               Finding good creative work shouldn't mean scrolling through a thousand low-quality listings.
-            </p>
-            <p className="text-lg sm:text-xl text-brand-200/80 leading-[1.8] mb-12 max-w-3xl mx-auto font-light">
+            </h2>
+            <p className="text-xl md:text-[1.35rem] text-brand-200/80 leading-[1.6] mb-12 max-w-3xl mx-auto">
               Every week, we hand-pick writing and design roles worth actually applying to, and send them straight to your inbox. Just roles that pay well, from teams worth working with.
             </p>
             <a href="#subscribe" className="inline-block px-10 py-4 bg-white text-brand-950 rounded-[0.8rem] font-medium text-[16px] hover:bg-brand-50 transition-colors shadow-lg hover:scale-[1.02]">
