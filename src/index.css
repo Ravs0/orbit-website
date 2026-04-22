@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  /* Crisp Light Purple Palette */
+  --color-brand-50: #F8F6FC;
+  --color-brand-100: #F0EAFD;
+  --color-brand-200: #DCD0F7;
+  --color-brand-300: #C2ABEF;
+  --color-brand-400: #A580E5;
+  --color-brand-500: #885BCE;
+  --color-brand-600: #4338CA; /* Vibrant Indigo/Purple resembling the image button */
+  --color-brand-700: #3730A3;
+  --color-brand-800: #3E388A; /* Noticeable deep purple */
+  --color-brand-900: #322A70; /* Distinct dark purple */
+  --color-brand-950: #262058; /* No true black, heavily purple-tinted */
+}
+
+body {
+  background-color: #FAFAFC;
+  background-image: 
+    radial-gradient(circle at top right, rgba(67, 56, 202, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at bottom left, rgba(67, 56, 202, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+  color: var(--color-brand-950);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-950);
+}
+
+/* Subtle, non-loud glowing accents */
+.subtle-glow {
+  box-shadow: 0 4px 20px -2px rgba(67, 56, 202, 0.15);
+}
