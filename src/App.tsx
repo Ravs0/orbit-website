@@ -108,13 +108,13 @@ function Hero() {
                   onClick={() => setRole('writer')} 
                   className="w-full sm:w-auto px-8 py-4 bg-brand-600 text-white border border-brand-600 rounded-[0.4rem] font-medium text-[16px] shadow-lg hover:bg-brand-500 transition-all hover:scale-[1.02]"
                 >
-                  I'm a writer &rarr;
+                  I'm A Writer &rarr;
                 </button>
                 <button 
                   onClick={() => setRole('designer')} 
                   className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-300 text-brand-950 rounded-[0.4rem] font-medium text-[16px] hover:bg-gray-50 transition-all hover:scale-[1.02] shadow-sm"
                 >
-                  I'm a designer &rarr;
+                  I'm A Designer &rarr;
                 </button>
               </motion.div>
             )}
