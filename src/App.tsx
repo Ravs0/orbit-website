@@ -262,7 +262,7 @@ function About() {
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <motion.h2 
             custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
-            className="text-brand-400 text-[11px] font-bold tracking-[0.2em] uppercase mb-6"
+            className="text-brand-400 text-[18px] sm:text-[24px] font-bold tracking-[0.2em] uppercase mb-6"
           >
             About Us
           </motion.h2>
@@ -271,7 +271,7 @@ function About() {
             custom={0.2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
           >
             <p className="text-2xl sm:text-[2rem] font-medium tracking-tight text-white leading-[1.4] mb-8">
-              Finding good creative work shouldn't mean scrolling through a thousand low-quality listings.
+              Finding Good Creative Work Shouldn't Mean Scrolling Through A Thousand Low-Quality Listings.
             </p>
             <p className="text-lg sm:text-xl text-brand-200/80 leading-[1.8] mb-12 max-w-3xl mx-auto font-light">
               Every week, we hand-pick writing and design roles worth actually applying to, and send them straight to your inbox. Just roles that pay well, from teams worth working with.
