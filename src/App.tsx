@@ -85,9 +85,9 @@ function Hero() {
         </motion.div>
 
         {/* Huge Heading */}
-        <motion.h1 custom={0.1} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-sans font-bold text-brand-950 leading-[1.05] tracking-tight mb-8 max-w-5xl">
-          Where Writers And Designers <br />
-          <span className="font-sans font-bold text-brand-600">Land Their Next Role.</span>
+        <motion.h1 custom={0.1} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-sans font-bold text-brand-950 leading-[1.05] tracking-tight mb-8 w-full">
+          <span className="inline-block">Where Writers And Designers</span> <br />
+          <span className="font-sans font-bold text-brand-600 inline-block">Land Their Next Role.</span>
         </motion.h1>
         
         {/* Subtext */}
