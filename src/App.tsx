@@ -46,9 +46,6 @@ function Navbar() {
           Orbit
         </div>
         <div className="flex items-center gap-8 text-[15px] font-medium tracking-tight">
-          <a href="#pricing" className="text-gray-500 hover:text-brand-950 transition-colors hidden sm:block">
-            Pricing
-          </a>
           <a href="#subscribe" className="text-gray-500 hover:text-brand-950 transition-colors hidden sm:block">
             Subscribe
           </a>
@@ -80,32 +77,32 @@ function Hero() {
   return (
     <section className="relative px-6 pt-32 pb-28 md:pt-48 md:pb-40 overflow-hidden flex flex-col justify-center min-h-[90vh] bg-white" id="subscribe">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05)_0%,transparent_50%)] pointer-events-none opacity-100" />
-      <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-start text-left">
+      <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center text-center">
         
         {/* Eyebrow matching screenshot style */}
         <motion.div custom={0.05} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-brand-600 text-[11px] font-bold tracking-[0.25em] uppercase mb-10">
-          The curated job board for creatives
+          The Curated Job Board For Creatives
         </motion.div>
 
         {/* Huge Heading */}
-        <motion.h1 custom={0.1} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-bold text-brand-950 leading-[1.05] tracking-tight mb-8 max-w-5xl">
-          Where writers and designers <br className="hidden lg:block" />
-          <span className="font-serif italic font-bold text-brand-600">land their next role.</span>
+        <motion.h1 custom={0.1} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-[3rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] font-sans font-bold text-brand-950 leading-[1.05] tracking-tight mb-8 max-w-5xl">
+          Where Writers And Designers <br />
+          <span className="font-sans font-bold text-brand-600">Land Their Next Role.</span>
         </motion.h1>
         
         {/* Subtext */}
         <motion.p custom={0.2} initial="hidden" animate="visible" variants={fadeUpVariants} className="text-xl md:text-[1.35rem] text-gray-600 mb-12 max-w-2xl leading-[1.6]">
-          hand-picked roles delivered weekly to 30,000+ subscribers
+          Hand-Picked Roles Delivered Weekly To 30,000+ Subscribers
         </motion.p>
         
         {/* Actions */}
-        <motion.div custom={0.3} initial="hidden" animate="visible" variants={fadeUpVariants} className="w-full max-w-xl flex justify-start">
+        <motion.div custom={0.3} initial="hidden" animate="visible" variants={fadeUpVariants} className="w-full max-w-xl flex justify-center">
           <AnimatePresence mode="wait">
             {!role && !subscribed && (
               <motion.div 
                 key="buttons"
                 exit={{ opacity: 0, y: -10 }}
-                className="flex flex-col sm:flex-row items-center gap-4 w-full justify-start"
+                className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center"
               >
                 <button 
                   onClick={() => setRole('writer')} 
@@ -129,7 +126,7 @@ function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 onSubmit={handleSubscribe}
-                className="flex flex-col sm:flex-row gap-3 w-full justify-start"
+                className="flex flex-col sm:flex-row gap-3 w-full justify-center"
               >
                 <input 
                   type="email" 
@@ -152,7 +149,7 @@ function Hero() {
                 key="success"
                 initial={{ opacity: 0, scale: 0.98 }} 
                 animate={{ opacity: 1, scale: 1 }}
-                className="w-full px-6 py-4 border border-green-200 bg-green-50 text-green-800 rounded-[0.4rem] font-medium text-[16px] flex items-center justify-start gap-3"
+                className="w-full px-6 py-4 border border-green-200 bg-green-50 text-green-800 rounded-[0.4rem] font-medium text-[16px] flex items-center justify-center gap-3"
               >
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 Check your inbox. You're on the list.
@@ -175,16 +172,9 @@ function PricingCard({ pretitle, title, pricePrefix, price, priceSuffix, feature
       <div className="text-brand-500 font-bold text-xs tracking-widest uppercase mb-4 font-sans">{pretitle}</div>
       <h3 className="text-[2rem] font-serif text-brand-950 font-bold mb-6 tracking-tight leading-tight">{title}</h3>
       
-      <div className="mb-2 flex items-baseline leading-none font-sans">
+      <div className="mb-2 flex items-baseline leading-none font-sans justify-center">
         {pricePrefix && <span className="text-2xl text-brand-800/80 mr-1.5">{pricePrefix}</span>}
-        {price.startsWith('$') ? (
-          <>
-            <span className="text-[1.75rem] font-normal text-brand-950 mr-1 align-top self-start mt-2">$</span>
-            <span className="text-[3.5rem] font-bold tracking-tight text-brand-950 leading-none">{price.slice(1)}</span>
-          </>
-        ) : (
-          <span className="text-[3.5rem] font-bold tracking-tight text-brand-950 leading-none">{price}</span>
-        )}
+        <span className="text-[3.5rem] font-bold tracking-tight text-brand-950 leading-none">{price}</span>
         {priceSuffix && <span className="text-[17px] font-medium text-gray-500 ml-2">{priceSuffix}</span>}
       </div>
 
@@ -194,10 +184,10 @@ function PricingCard({ pretitle, title, pricePrefix, price, priceSuffix, feature
 
       <hr className="border-gray-100 mb-8" />
 
-      <ul className="flex-1 space-y-4">
+      <ul className="flex-1 space-y-4 text-left">
         {features.map((f: string, i: number) => (
           <li key={i} className="flex items-start gap-4">
-             <Check className="w-[18px] h-[18px] text-orange-600 shrink-0 mt-0.5" strokeWidth={3} />
+             <Check className="w-[18px] h-[18px] text-black shrink-0 mt-0.5" strokeWidth={3} />
              <span className="text-[15px] leading-[1.6] text-gray-600 font-medium">{f}</span>
           </li>
         ))}
@@ -214,11 +204,11 @@ function Pricing() {
         <motion.div 
           custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariants}
           className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          <div className="text-brand-400 font-bold text-[13px] sm:text-[15px] tracking-[0.25em] uppercase mb-8">
-            Feature on Orbit
+          <div className="text-brand-400 font-bold text-[18px] sm:text-[24px] tracking-[0.2em] uppercase mb-8">
+            Feature On Orbit
           </div>
-          <h2 className="text-[2.5rem] md:text-[4rem] lg:text-[4.5rem] font-serif tracking-tight text-white mb-8 leading-[1]">
-            Reach 30,000+ Writers and Designers
+          <h2 className="text-[2.5rem] md:text-[4rem] lg:text-[4.5rem] font-sans font-bold tracking-tight text-white mb-8 leading-[1]">
+            Reach 30,000+ Writers And Designers
           </h2>
           <p className="text-xl md:text-[1.35rem] text-brand-200/80 font-normal leading-relaxed max-w-2xl">
             Feature your roles or sponsor a placement in our weekly newsletter
